@@ -13,7 +13,11 @@ fixes for the module are worth downloading.
 
 
 INSTALLATION
+METHOD 1 (RECOMMENDED)
 
+$ sudo cpanm .
+
+METHOD 2
 To install this module, run the following commands:
 
 	perl Makefile.PL

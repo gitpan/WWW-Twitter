@@ -16,30 +16,6 @@ use HTTP::Cookies;
 
 our $VERSION = '1.0';
 
-
-=head1 SYNOPSIS
-
-Twitter interface (Do not make use of twitter API).
-
-Usage:
-
-use twitter;
-
-$ENV{PERL_LWP_SSL_VERIFY_HOSTNAME} = 0;
-
-my $twitter = WWW::twitter->new( username => $USERNAME,
-					password => $PASS);
-					
-
-$twitter->login; 
-
-$mystatus_id = $twitter->tweet('my first status');
-print "mystatus_id $mystatus_id \n";
-
-
-=cut
-
-
 {
 has 'username', is => 'rw', isa => 'Str',default => '';	
 has 'password', is => 'rw', isa => 'Str',default => '';	
@@ -346,3 +322,89 @@ return $browser;
 
 }
 1; # End of WWW::twitter
+
+
+__END__
+
+=head1 NAME
+
+WWW::Twitter - Twitter interface (Without API).
+
+
+=head1 SYNOPSIS
+
+
+Usage:
+
+use twitter;
+
+$ENV{PERL_LWP_SSL_VERIFY_HOSTNAME} = 0;
+
+my $twitter = WWW::twitter->new( username => USERNAME,
+					password => PASS);
+					
+
+$twitter->login; 
+
+$mystatus_id = $twitter->tweet('my first status');
+print "mystatus_id $mystatus_id \n";
+
+
+=head1 DESCRIPTION
+
+Twitter::Shell Twitter interface. Do not make use of twitter API (Only username and password required)
+
+=head1 FUNCTIONS
+
+=head2 constructor
+
+    my $twitter = WWW::twitter->new( username => USERNAME,
+					password => PASS);
+
+=head2 login
+
+    $twitter->login;
+
+Login to the twitter account with the username and password provided. You MUST call this function before call any other function.
+
+=head2 tweet
+
+    $mystatus_id = $twitter->tweet('my first status');
+
+Make a tweet and return the tweet id
+
+=head2 favorite
+
+   $status = $twitter->favorite($status_id);
+   print "favorite status $status \n"; # 1 = OK ; 0 = Something wrong
+
+Mark as favorite a tweet. The functions needs the status id as a parameter. Return 1 if sucessful and 0 if something went wrong
+   
+=head2 retweet
+
+   $status = $twitter->retweet($status_id);
+   print "favorite status $status \n"; # 1 = OK ; 0 = Something wrong
+
+Make a retweet of an update. The functions needs the status id as a parameter. Return 1 if sucessful and 0 if something went wrong
+   
+=head2 stats
+
+   $stats = $twitter->stats;	
+   $following = $stats->{following}/;
+   $followers = $stats->{followers};	
+   $total_status = $stats->{total_status};
+   $total_media = $stats->{total_media};
+   $favorites = $stats->{favorites};
+   print "following $following followers $followers  total_status $total_status  total_media $total_media  favorites $favorites  \n";	
+
+
+Collect the stats of the current account.
+   
+         
+                  
+=head1 LICENSE
+
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+
+See http://www.perl.com/perl/misc/Artistic.html
+=cut
