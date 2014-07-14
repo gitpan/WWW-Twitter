@@ -9,12 +9,11 @@ use strict;
 use warnings FATAL => 'all';
 use Carp qw(croak);
 use Moose;
-use Data::Dumper;
 use Net::SSL (); # From Crypt-SSLeay
 use LWP::UserAgent;
 use HTTP::Cookies;
 
-our $VERSION = '1.0';
+our $VERSION = '1.1';
 
 {
 has 'username', is => 'rw', isa => 'Str',default => '';	
@@ -400,7 +399,8 @@ Make a retweet of an update. The functions needs the status id as a parameter. R
 
 Collect the stats of the current account.
    
-         
+=head2 dispatch
+ Internal function         
                   
 =head1 LICENSE
 
