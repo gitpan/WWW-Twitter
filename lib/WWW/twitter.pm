@@ -3,7 +3,7 @@
 # daniel.torres at owasp.org
 # All rights released.
 
-package WWW::twitter;
+package WWW::Twitter;
 
 use strict;
 use warnings FATAL => 'all';
@@ -320,7 +320,7 @@ return $browser;
 }
 
 }
-1; # End of WWW::twitter
+1; # End of WWW::Twitter
 
 
 __END__
@@ -339,7 +339,7 @@ use twitter;
 
 $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME} = 0;
 
-my $twitter = WWW::twitter->new( username => USERNAME,
+my $twitter = WWW::Twitter->new( username => USERNAME,
 					password => PASS);
 					
 
@@ -357,7 +357,7 @@ Twitter::Shell Twitter interface. Do not make use of twitter API (Only username 
 
 =head2 constructor
 
-    my $twitter = WWW::twitter->new( username => USERNAME,
+    my $twitter = WWW::Twitter->new( username => USERNAME,
 					password => PASS);
 
 =head2 login
