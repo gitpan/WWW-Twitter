@@ -6,9 +6,9 @@ use warnings FATAL => 'all';
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME             => 'WWW::twitter',
-    DISTNAME		 => 'www-twitter',
-    VERSION_FROM     => 'lib/WWW/twitter.pm',
+    NAME             => 'WWW::Twitter',
+    DISTNAME		 => 'WWW-Twitter',
+    VERSION_FROM     => 'lib/WWW/Twitter.pm',
     ABSTRACT   		 => 'Twitter from perl',
     AUTHOR           => q{Daniel Torres <daniel.torres@owasp.org>},  
     LICENSE          => 'Artistic_2_0',
@@ -21,5 +21,5 @@ WriteMakefile(
         'HTTP::Cookies' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'WWW-twitter-*' },
+    clean => { FILES => 'WWW-Twitter-*' },
 );

@@ -1,5 +1,5 @@
 Changes
-lib/WWW/twitter.pm
+lib/WWW/Twitter.pm
 Makefile.PL
 MANIFEST			This list of files
 README

@@ -7,7 +7,7 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-    use_ok( 'WWW::twitter' ) || print "Bail out!\n";
+    use_ok( 'WWW::Twitter' ) || print "Bail out!\n";
 }
 
-diag( "Testing WWW::twitter $WWW::twitter::VERSION, Perl $], $^X" );
+diag( "Testing WWW::Twitter $WWW::Twitter::VERSION, Perl $], $^X" );

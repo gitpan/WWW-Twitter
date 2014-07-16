@@ -13,7 +13,7 @@ use Net::SSL (); # From Crypt-SSLeay
 use LWP::UserAgent;
 use HTTP::Cookies;
 
-our $VERSION = '1.1';
+our $VERSION = '1.3';
 
 {
 has 'username', is => 'rw', isa => 'Str',default => '';	
@@ -335,7 +335,7 @@ WWW::Twitter - Twitter interface (Without API).
 
 Usage:
 
-use twitter;
+use WWW::Twitter;
 
 $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME} = 0;
 
